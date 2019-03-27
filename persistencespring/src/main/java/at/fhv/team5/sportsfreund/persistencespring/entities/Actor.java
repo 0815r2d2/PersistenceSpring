@@ -5,11 +5,16 @@
  */
 package at.fhv.team5.sportsfreund.persistencespring.entities;
 
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
 
 @Entity
 public class Actor {
@@ -19,14 +24,24 @@ public class Actor {
 	@Column(name="id")
 	private Integer _id;
 	
-	@Column(name="fName")
+	@Column(name="fname")
 	private String _fName;
 	
-	@Column(name="lName")
+	@Column(name="lname")
 	private String _lName;
 	
 	@Column(name="residence")
 	private String _residence;
+	
+	@ManyToMany(mappedBy="_actors")
+	private Collection<Film> _films = new ArrayList<>();
+	
+	protected Actor() {}
+	
+	public Actor(String fName, String lName) {
+		_fName = fName;
+		_lName = lName;
+	}
 
 	public String getfName() {
 		return _fName;
@@ -54,6 +69,14 @@ public class Actor {
 
 	public Integer getId() {
 		return _id;
+	}
+
+	public Collection<Film> getFilms() {
+		return _films;
+	}
+
+	public void setFilms(Collection<Film> films) {
+		_films = films;
 	}
 
 }
