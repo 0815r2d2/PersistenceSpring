@@ -3,7 +3,7 @@
  * Version 1.0
  * 26.03.2019
  */
-package at.fhv.team5.sportsfreund.persistencespring.entities;
+package at.fhv.persistencespring.entities;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -21,7 +21,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
-public class Language {
+public class Genre {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
@@ -31,16 +31,16 @@ public class Language {
 	@Column(name="name")
 	private String _name;
 	
-	@OneToMany(mappedBy="_language")
+	@OneToMany(mappedBy="_genre")
 	@LazyCollection(LazyCollectionOption.FALSE)
 	@Cascade(CascadeType.SAVE_UPDATE)
 	private Collection<Film> _films = new ArrayList<Film>();
 	
-	protected Language() {
+	protected Genre() {
 		
 	}
 	
-	public Language(String name) {
+	public Genre(String name) {
 		_name = name;
 	}
 

@@ -3,11 +3,11 @@
  * Version 1.0
  * 26.03.2019
  */
-package at.fhv.team5.sportsfreund.persistencespring.repository;
+package at.fhv.persistencespring.repository;
 
 import org.springframework.data.repository.CrudRepository;
 
-import at.fhv.team5.sportsfreund.persistencespring.entities.Genre;
+import at.fhv.persistencespring.entities.Genre;
 
 public interface GenreRepository extends CrudRepository<Genre, Integer>{
 
