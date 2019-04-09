@@ -10,5 +10,7 @@ import org.springframework.data.repository.CrudRepository;
 import at.fhv.persistencespring.entities.Genre;
 
 public interface GenreRepository extends CrudRepository<Genre, Integer>{
+	
+	Genre findBy_id(Integer id);
 
 }

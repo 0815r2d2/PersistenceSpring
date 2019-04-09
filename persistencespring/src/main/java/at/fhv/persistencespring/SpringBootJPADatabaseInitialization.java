@@ -20,19 +20,20 @@ import at.fhv.persistencespring.repository.FilmRepository;
 import at.fhv.persistencespring.repository.GenreRepository;
 import at.fhv.persistencespring.repository.LanguageRepository;
 @SpringBootApplication
-public class SpringBootJPADatabaseInitialization implements CommandLineRunner{
+public class SpringBootJPADatabaseInitialization {
+//implements CommandLineRunner{
 	
-	@Autowired
-	private GenreRepository _genreRepository;
-	
-	@Autowired
-	private LanguageRepository _languageRepository;
-	
-	@Autowired 
-	private FilmRepository _filmRespository;
-	
-	@Autowired
-	private Facade _facade;
+//	@Autowired
+//	private GenreRepository _genreRepository;
+//	
+//	@Autowired
+//	private LanguageRepository _languageRepository;
+//	
+//	@Autowired 
+//	private FilmRepository _filmRespository;
+//	
+//	@Autowired
+//	private Facade _facade;
 	
 	
 
@@ -44,41 +45,41 @@ public class SpringBootJPADatabaseInitialization implements CommandLineRunner{
 
 	}
 
-	/* (non-Javadoc)
-	 * @see org.springframework.boot.CommandLineRunner#run(java.lang.String[])
-	 */
-	@Override
-	public void run(String... arg0) throws Exception {
-		
-
-		Genre horror = new Genre("Horror");
-		Genre fant = new Genre("Fantasy");
-		Genre ac = new Genre("Action");
-		_facade.saveGenre(horror);
-		_facade.saveGenre(fant);
-		_facade.saveGenre(ac);
-
-		Language germ = new Language("Deutsch");
-		Language eng = new Language("Englisch");
-		Language sp = new Language("Spanisch");
-		_facade.saveLanguage(germ);
-		_facade.saveLanguage(eng);
-		_facade.saveLanguage(sp);
-
-		Actor act1 = new Actor("Orlando", "Bloom");
-		Actor act2 = new Actor("Ian", "McKellen");
-		Actor act3 = new Actor("Viggo", "Mortensen");
-		_facade.saveActor(act1);
-		_facade.saveActor(act2);
-		_facade.saveActor(act3);
-
-		Film hdr = new Film("Herr der Ringe", germ, fant);
-
-		hdr.getActors().add(act1);
-		hdr.getActors().add(act2);
-		hdr.getActors().add(act3);
-
-		_facade.saveFilm(hdr);
-	}
+//	/* (non-Javadoc)
+//	 * @see org.springframework.boot.CommandLineRunner#run(java.lang.String[])
+//	 */
+//	@Override
+//	public void run(String... arg0) throws Exception {
+//		
+//
+//		Genre horror = new Genre("Horror");
+//		Genre fant = new Genre("Fantasy");
+//		Genre ac = new Genre("Action");
+//		_facade.saveGenre(horror);
+//		_facade.saveGenre(fant);
+//		_facade.saveGenre(ac);
+//
+//		Language germ = new Language("Deutsch");
+//		Language eng = new Language("Englisch");
+//		Language sp = new Language("Spanisch");
+//		_facade.saveLanguage(germ);
+//		_facade.saveLanguage(eng);
+//		_facade.saveLanguage(sp);
+//
+//		Actor act1 = new Actor("Orlando", "Bloom");
+//		Actor act2 = new Actor("Ian", "McKellen");
+//		Actor act3 = new Actor("Viggo", "Mortensen");
+//		_facade.saveActor(act1);
+//		_facade.saveActor(act2);
+//		_facade.saveActor(act3);
+//
+//		Film hdr = new Film("Herr der Ringe", germ, fant);
+//
+//		hdr.getActors().add(act1);
+//		hdr.getActors().add(act2);
+//		hdr.getActors().add(act3);
+//
+//		_facade.saveFilm(hdr);
+//	}
 
 }

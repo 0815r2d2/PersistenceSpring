@@ -14,5 +14,7 @@ import at.fhv.persistencespring.entities.Actor;
 public interface ActorRepository extends CrudRepository<Actor, Integer>{
 	
 	List<Actor> findBy_fName(String firstName);
+	
+	Actor findBy_id(Integer id);
 
 }

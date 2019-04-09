@@ -15,6 +15,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.LazyCollection;
+import org.hibernate.annotations.LazyCollectionOption;
+
 
 @Entity
 public class Actor {
@@ -34,6 +37,7 @@ public class Actor {
 	private String _residence;
 	
 	@ManyToMany(mappedBy="_actors")
+	@LazyCollection(LazyCollectionOption.EXTRA)
 	private Collection<Film> _films = new ArrayList<>();
 	
 	protected Actor() {}

@@ -10,5 +10,6 @@ import org.springframework.data.repository.CrudRepository;
 import at.fhv.persistencespring.entities.Film;
 
 public interface FilmRepository extends CrudRepository<Film, Integer>{
-
+	
+	Film findBy_id(Integer id);
 }
