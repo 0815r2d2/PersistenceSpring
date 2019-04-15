@@ -32,8 +32,8 @@ public class SpringBootJPADatabaseInitialization {
 //	@Autowired 
 //	private FilmRepository _filmRespository;
 //	
-//	@Autowired
-//	private Facade _facade;
+	@Autowired
+	private Facade _facade;
 	
 	
 
@@ -50,8 +50,6 @@ public class SpringBootJPADatabaseInitialization {
 //	 */
 //	@Override
 //	public void run(String... arg0) throws Exception {
-//		
-//
 //		Genre horror = new Genre("Horror");
 //		Genre fant = new Genre("Fantasy");
 //		Genre ac = new Genre("Action");

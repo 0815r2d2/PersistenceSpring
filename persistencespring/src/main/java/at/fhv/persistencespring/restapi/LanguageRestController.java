@@ -33,6 +33,11 @@ public class LanguageRestController {
         return ResponseEntity.ok(_languageRepository.findAll());
     }
 	
+	@GetMapping("/{id}")
+    public Language findById(@PathVariable Integer id) {
+        return _languageRepository.findBy_id(id);
+    }
+	
 	@PostMapping
     public ResponseEntity<Language> create(@Valid @RequestBody Language language) {
         return ResponseEntity.ok(_languageRepository.save(language));

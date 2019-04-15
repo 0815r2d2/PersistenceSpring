@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -21,6 +22,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
+@Table(name = "Genre")
 public class Genre {
 	
 	@Id
@@ -31,10 +33,10 @@ public class Genre {
 	@Column(name="name")
 	private String _name;
 	
-	@OneToMany(mappedBy="_genre")
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@Cascade(CascadeType.SAVE_UPDATE)
-	private Collection<Film> _films = new ArrayList<Film>();
+//	@OneToMany(mappedBy="_genre")
+//	@LazyCollection(LazyCollectionOption.FALSE)
+//	@Cascade(CascadeType.SAVE_UPDATE)
+//	private Collection<Film> _films = new ArrayList<Film>();
 	
 	protected Genre() {
 		
@@ -56,11 +58,11 @@ public class Genre {
 		return _id;
 	}
 
-	public Collection<Film> getFilms() {
-		return _films;
-	}
-
-	public void setFilms(Collection<Film> films) {
-		_films = films;
-	}
+//	public Collection<Film> getFilms() {
+//		return _films;
+//	}
+//
+//	public void setFilms(Collection<Film> films) {
+//		_films = films;
+//	}
 }

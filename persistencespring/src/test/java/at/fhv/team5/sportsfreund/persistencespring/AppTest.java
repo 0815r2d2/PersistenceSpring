@@ -1,5 +1,10 @@
 package at.fhv.team5.sportsfreund.persistencespring;
 
+import at.fhv.persistencespring.entities.Actor;
+import at.fhv.persistencespring.entities.Film;
+import at.fhv.persistencespring.entities.Genre;
+import at.fhv.persistencespring.entities.Language;
+import at.fhv.persistencespring.facade.Facade;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -33,6 +38,6 @@ public class AppTest
      */
     public void testApp()
     {
-        assertTrue( true );
+   		assert(true);
     }
 }

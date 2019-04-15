@@ -14,12 +14,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 
 @Entity
+@Table(name = "Actor")
 public class Actor {
 	
 	@Id
@@ -36,10 +38,10 @@ public class Actor {
 	@Column(name="residence")
 	private String _residence;
 	
-	@ManyToMany(mappedBy="_actors")
-	@LazyCollection(LazyCollectionOption.EXTRA)
-	private Collection<Film> _films = new ArrayList<>();
-	
+//	@ManyToMany(mappedBy="_actors")
+//	@LazyCollection(LazyCollectionOption.EXTRA)
+//	private Collection<Film> _films = new ArrayList<>();
+//	
 	protected Actor() {}
 	
 	public Actor(String fName, String lName) {
@@ -75,12 +77,12 @@ public class Actor {
 		return _id;
 	}
 
-	public Collection<Film> getFilms() {
-		return _films;
-	}
-
-	public void setFilms(Collection<Film> films) {
-		_films = films;
-	}
+//	public Collection<Film> getFilms() {
+//		return _films;
+//	}
+//
+//	public void setFilms(Collection<Film> films) {
+//		_films = films;
+//	}
 
 }

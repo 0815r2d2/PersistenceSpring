@@ -17,11 +17,13 @@ import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
 
 @Entity
+@Table(name = "Film")
 public class Film {
 	
 	@Id
@@ -32,24 +34,24 @@ public class Film {
 	@Column(name="title")
 	private String _title;
 	
-	@Column(name="releaseYear")
+	@Column(name="releaseyear")
 	private Integer _releaseYear;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name ="languageId")
+	@JoinColumn(name ="languageid")
 	@Cascade(CascadeType.SAVE_UPDATE)
 	private Language _language;
 	
 	@ManyToOne(optional = false)
-	@JoinColumn(name ="genreId")
+	@JoinColumn(name ="genreid")
 	@Cascade(CascadeType.SAVE_UPDATE)
 	private Genre _genre;
 	
 	@ManyToMany
 	@JoinTable(
-			name="filmActor",
-			joinColumns = @JoinColumn(name ="filmId"),
-			inverseJoinColumns = @JoinColumn(name ="actorId")
+			name="filmactor",
+			joinColumns = @JoinColumn(name ="filmid"),
+			inverseJoinColumns = @JoinColumn(name ="actorid")
 	)
 	@Cascade(CascadeType.SAVE_UPDATE)
 	private List<Actor> _actors = new ArrayList<>();
