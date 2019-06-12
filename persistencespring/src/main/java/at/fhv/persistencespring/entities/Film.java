@@ -37,12 +37,12 @@ public class Film {
 	@Column(name="releaseyear")
 	private Integer _releaseYear;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne
 	@JoinColumn(name ="languageid")
 	@Cascade(CascadeType.SAVE_UPDATE)
 	private Language _language;
 	
-	@ManyToOne(optional = false)
+	@ManyToOne
 	@JoinColumn(name ="genreid")
 	@Cascade(CascadeType.SAVE_UPDATE)
 	private Genre _genre;
@@ -61,9 +61,15 @@ public class Film {
 	}
 	
 	public Film(String title, Language language, Genre genre) {
+		this(title, language);
+		if(genre != null) {
+			_genre = genre;
+		}
+	}
+	
+	public Film(String title, Language language) {
 		_title = title;
 		_language = language;
-		_genre = genre;
 	}
 
 	public String getTitle() {

@@ -58,7 +58,7 @@ public class ActorRestController {
         if (_actorRepository.findBy_id(id) == null) {
             ResponseEntity.badRequest().build();
         }
-        _actorRepository.delete(id);
+        _actorRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
 	

@@ -51,7 +51,7 @@ public class FilmRestController {
         if (_filmRepository.findBy_id(id) == null) {
             ResponseEntity.badRequest().build();
         }
-        _filmRepository.delete(id);
+        _filmRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
 

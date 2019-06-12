@@ -51,7 +51,7 @@ public class GenreRestController {
         if (_genreRepository.findBy_id(id) == null) {
             ResponseEntity.badRequest().build();
         }
-        _genreRepository.delete(id);
+        _genreRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
 

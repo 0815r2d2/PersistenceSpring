@@ -14,6 +14,8 @@ import at.fhv.persistencespring.entities.Actor;
 import at.fhv.persistencespring.entities.Film;
 import at.fhv.persistencespring.entities.Genre;
 import at.fhv.persistencespring.entities.Language;
+import at.fhv.persistencespring.entities.Role;
+import at.fhv.persistencespring.entities.User;
 import at.fhv.persistencespring.facade.Facade;
 import at.fhv.persistencespring.repository.ActorRepository;
 import at.fhv.persistencespring.repository.FilmRepository;
@@ -21,7 +23,7 @@ import at.fhv.persistencespring.repository.GenreRepository;
 import at.fhv.persistencespring.repository.LanguageRepository;
 @SpringBootApplication
 public class SpringBootJPADatabaseInitialization {
-//implements CommandLineRunner{
+	//implements CommandLineRunner{
 	
 //	@Autowired
 //	private GenreRepository _genreRepository;
@@ -78,6 +80,17 @@ public class SpringBootJPADatabaseInitialization {
 //		hdr.getActors().add(act3);
 //
 //		_facade.saveFilm(hdr);
+//		
+//		Role role1 = new Role("ROLE_ADMIN");
+//		Role role2 = new Role("ROLE_USER");
+//		
+//		_facade.saveRole(role2);
+//		_facade.saveRole(role1);
+//		
+//		User user1 = new User("admin","$2a$10$hKDVYxLefVHV/vtuPhWD3OigtRyOykRLDdUAp80Z1crSoS1lFqaFS");
+//		user1.getRoles().add(role1);
+//		
+//		_facade.saveUser(user1);	
 //	}
 
 }

@@ -56,7 +56,7 @@ public class LanguageRestController {
         if (_languageRepository.findBy_id(id) == null) {
             ResponseEntity.badRequest().build();
         }
-        _languageRepository.delete(id);
+        _languageRepository.deleteById(id);
         return ResponseEntity.ok().build();
     }
 
