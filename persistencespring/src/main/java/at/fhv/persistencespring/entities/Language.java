@@ -14,6 +14,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 import org.hibernate.annotations.Cascade;
 import org.hibernate.annotations.CascadeType;
@@ -21,6 +22,7 @@ import org.hibernate.annotations.LazyCollection;
 import org.hibernate.annotations.LazyCollectionOption;
 
 @Entity
+@Table(name="Language")
 public class Language {
 	
 	@Id
@@ -32,7 +34,6 @@ public class Language {
 	private String _name;
 	
 	@OneToMany(mappedBy="_language")
-	@LazyCollection(LazyCollectionOption.FALSE)
 	@Cascade(CascadeType.SAVE_UPDATE)
 	private Collection<Film> _films = new ArrayList<Film>();
 	
